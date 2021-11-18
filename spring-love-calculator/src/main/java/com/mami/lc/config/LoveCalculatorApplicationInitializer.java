@@ -9,9 +9,9 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 import java.util.logging.Logger;
 
-public class LoveCalculatorApplicationInitializer implements WebApplicationInitializer {
+public class LoveCalculatorApplicationInitializer  /*implements WebApplicationInitializer*/ {
 
-    @Override
+    //@Override
     public void onStartup(ServletContext servletContext)  {
 
 
