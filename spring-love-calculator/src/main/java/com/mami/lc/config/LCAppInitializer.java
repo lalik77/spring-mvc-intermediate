@@ -1,5 +1,6 @@
 package com.mami.lc.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class LCAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -11,11 +12,14 @@ public class LCAppInitializer extends AbstractAnnotationConfigDispatcherServletI
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[0];
+        Class[] classes = {LoveCalculatorAppConfig.class};
+        return classes;
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[0];
+
+        String[] arr = {"/mywebsite.com/*"};
+        return arr;
     }
 }

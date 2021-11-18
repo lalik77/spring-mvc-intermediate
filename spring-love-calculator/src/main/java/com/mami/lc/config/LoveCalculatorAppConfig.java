@@ -8,7 +8,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "com.mami.lc")
+@ComponentScan(basePackages = "com.mami.lc.controllers")
 public class LoveCalculatorAppConfig {
 
     @Bean

@@ -6,6 +6,6 @@
 </head>
 <body>
 
-<div align="center">Hello World Form File hello-worls.jsp</div>
+<div align="center">Hello World Form File hello-world.jsp</div>
 </body>
 </html>
