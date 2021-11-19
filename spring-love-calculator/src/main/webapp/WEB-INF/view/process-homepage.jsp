@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,6 +5,14 @@
 </head>
 <body>
 
-<div align="center">Hello World Form File hello-world.jsp</div>
+<div align="center">
+    <br>
+    <br>
+    <h1> Love Calculator </h1>
+    <br>
+    <hr>
+<p> so im getting my result page</p>
+
+</div>
 </body>
 </html>

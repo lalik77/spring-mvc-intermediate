@@ -37,7 +37,7 @@ public class LoveCalculatorApplicationInitializer  /*implements WebApplicationIn
         myDispatcherServlet.setLoadOnStartup(1);
 
         //url mapping
-        myDispatcherServlet.addMapping("/mywebsite.com/*");
+        myDispatcherServlet.addMapping("");
 
 
 
