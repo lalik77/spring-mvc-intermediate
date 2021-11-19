@@ -2,11 +2,12 @@ package com.mami.lc.api;
 
 public class UserInfoDTO {
 
-    private String userName;
-    private String crushName;
+    private String userName = "Default Name";
+    private String crushName = "Default CrshName";
 
     public UserInfoDTO() {
         System.out.println("Constructor Called");
+        System.out.println(this.hashCode());
     }
 
     public String getUserName() {

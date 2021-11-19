@@ -13,23 +13,24 @@
     <h1> Love Calculator </h1>
     <br>
     <hr>
-    <form action="process-homepage" method="get">
+
+    <form:form  action="process-homepage" method="get" modelAttribute="userInfo">
         <p>
 
             <label for="yn">Your Name </label>
-            <input type="text" id="yn" name="userName">
+            <form:input id="yn" path="userName"/>
 
         </p>
 
         <p>
             <label for="cn">Crush Name</label>
-            <input type="text" id="cn" name="crushName">
+            <form:input id="cn" path="crushName"/>
 
         </p>
 
 
         <input  type="submit" value="calculate" >
-    </form>
+    </form:form>
 
 </div>
 </body>
