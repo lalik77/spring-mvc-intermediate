@@ -9,10 +9,10 @@ public class ProcessController {
 
 
     @RequestMapping("/process-homepage")
-    public String process(@RequestParam String userName , @RequestParam String crushName ) {
+    public String process(@RequestParam("userName") String userName1 , @RequestParam("crushName")  String crushName1 ) {
 
-        System.out.println("Usename :" + userName);
-        System.out.println("Crushname : " + crushName);
+        System.out.println("Usename :" + userName1);
+        System.out.println("Crushname : " + crushName1);
 
         return "process-homepage";
     }
