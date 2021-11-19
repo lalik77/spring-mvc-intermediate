@@ -11,8 +11,8 @@
     <h1> Love Calculator </h1>
     <br>
     <hr>
-<p> Username ${uname}</p>
-<p> Crushname ${cname}</p>
+<p> Username ${userInfo.userName}</p>
+<p> Crushname ${userInfo.crushName}</p>
 
 </div>
 </body>
