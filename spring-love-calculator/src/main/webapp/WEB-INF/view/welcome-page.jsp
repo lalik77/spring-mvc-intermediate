@@ -1,4 +1,6 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Mvc app</title>
@@ -26,7 +28,7 @@
         </p>
 
 
-        <input type="submit" value="calculate" >
+        <input  type="submit" value="calculate" >
     </form>
 
 </div>
