@@ -24,6 +24,16 @@
         }
 
     </script>
+
+    <style type="text/css">
+        .error {
+            color: red;
+            text-align: left;
+            position: fixed;
+            margin-left: 30px;
+
+        }
+    </style>
 </head>
 <body>
 
@@ -39,7 +49,7 @@
 
             <label for="yn">Your Name </label>
             <form:input id="yn" path="userName"/>
-            <for:errors path="userName"/>
+            <for:errors path="userName" cssClass="error"/>
 
         </p>
 
