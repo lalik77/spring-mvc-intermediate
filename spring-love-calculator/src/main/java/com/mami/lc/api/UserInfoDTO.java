@@ -1,19 +1,22 @@
 package com.mami.lc.api;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class UserInfoDTO {
 
-    private String userName = "Default Name";
-    private String crushName = "Default CrshName";
+    @NotBlank(message = " * User name can't be blank")
+    @Size(min = 2, message = " * Enter at least 2 symbols")
+    private String userName;
+    private String crushName;
 
     public UserInfoDTO() {
         System.out.println("Constructor Called");
-        System.out.println(this.hashCode());
+
     }
 
     public String getUserName() {
-        System.out.println("=====> From User Name Getter " + userName.hashCode());
         return userName;
     }
 
@@ -22,8 +25,7 @@ public class UserInfoDTO {
     }
 
     public String getCrushName() {
-        System.out.println("=====> From CrushName Getter " + crushName.hashCode());
-        return crushName;
+       return crushName;
     }
 
     public void setCrushName(String crushName) {
