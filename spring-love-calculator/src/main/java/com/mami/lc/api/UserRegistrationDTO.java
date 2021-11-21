@@ -1,11 +1,42 @@
 package com.mami.lc.api;
 
+import java.util.List;
+
 public class UserRegistrationDTO {
 
     private String name;
     private String userName;
     private char[] password ;
+    private String countryName;
+    private String[] hobbies;
+    private String gender;
 
+
+
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+
+    public String[] getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(String[] hobbies) {
+        this.hobbies = hobbies;
+    }
 
     public String getName() {
         return name;
