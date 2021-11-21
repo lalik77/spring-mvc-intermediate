@@ -1,5 +1,6 @@
 package com.mami.lc.api;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
@@ -10,6 +11,17 @@ public class UserInfoDTO {
     @Size(min = 2, message = " * Enter at least 2 symbols")
     private String userName;
     private String crushName;
+
+    @AssertTrue(message = "You have to agree our conditions")
+    private boolean termOfConditions;
+
+    public boolean isTermOfConditions() {
+        return termOfConditions;
+    }
+
+    public void setTermOfConditions(boolean termOfConditions) {
+        this.termOfConditions = termOfConditions;
+    }
 
     public UserInfoDTO() {
         System.out.println("Constructor Called");

@@ -15,6 +15,8 @@ public class ProcessController {
     @RequestMapping("/process-homepage")
     public String process(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result) {
 
+        System.out.println(userInfoDTO.isTermOfConditions());
+
         if (result.hasErrors()) {
 
             System.out.println("Errors in method process from: " + this.getClass());

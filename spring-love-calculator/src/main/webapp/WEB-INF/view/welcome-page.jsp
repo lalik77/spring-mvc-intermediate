@@ -44,21 +44,23 @@
     <br>
     <hr>
 
-    <form:form  action="process-homepage" method="get" modelAttribute="userInfo" onsubmit="return true">
+    <form:form  action="process-homepage" method="get" modelAttribute="userInfo" onsubmit="return validateUserName()">
         <p>
-
             <label for="yn">Your Name </label>
             <form:input id="yn" path="userName"/>
             <for:errors path="userName" cssClass="error"/>
-
         </p>
 
         <p>
             <label for="cn">Crush Name</label>
             <form:input id="cn" path="crushName"/>
-
         </p>
 
+        <p>
+          <form:checkbox path="termOfConditions" ></form:checkbox>
+            <label>I am agreeing that this is for fun</label>
+            <form:errors path="termOfConditions" cssClass="error"/>
+        </p>
 
         <input  type="submit" value="calculate" >
     </form:form>
