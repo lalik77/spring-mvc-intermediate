@@ -52,6 +52,13 @@
     <br/>
     <br/>
 
+    <h1>Communication</h1>
+
+    email <form:input path="communicationDTO.email"/>
+    <br/>
+    phone <form:input path="communicationDTO.phone"/>
+
+    <br/>
     <input type="submit" value="Register">
 
 </form:form>

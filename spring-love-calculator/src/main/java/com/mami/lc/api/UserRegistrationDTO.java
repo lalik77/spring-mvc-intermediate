@@ -10,6 +10,16 @@ public class UserRegistrationDTO {
     private String countryName;
     private String[] hobbies;
     private String gender;
+    private CommunicationDTO communicationDTO;
+
+
+    public CommunicationDTO getCommunicationDTO() {
+        return communicationDTO;
+    }
+
+    public void setCommunicationDTO(CommunicationDTO communicationDTO) {
+        this.communicationDTO = communicationDTO;
+    }
 
 
 
