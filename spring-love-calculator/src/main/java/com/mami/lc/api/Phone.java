@@ -21,5 +21,8 @@ public class Phone {
         this.baseNumber = baseNumber;
     }
 
-
+    @Override
+    public String toString() {
+        return countryCode + "--" + baseNumber;
+    }
 }

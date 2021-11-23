@@ -29,6 +29,9 @@
        </c:forEach>
    </ul>
 <li>Gender:&nbsp;${userRegistrationDto.gender}</li>
+<li>Email:&nbsp;${userRegistrationDto.communicationDTO.email}</li>
+
+<li>Phone:&nbsp;${userRegistrationDto.communicationDTO.phone}</li>
 
 </body>
 </html>
