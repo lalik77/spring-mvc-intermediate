@@ -16,8 +16,11 @@ public class RegistrationController {
 
         System.out.println("================>Inside showRegistrationForm method from " + getClass());
 
+        System.out.println(dto);
+
         //load the saved info from db
-        Phone phone = new Phone();
+
+       /* Phone phone = new Phone();
         phone.setCountryCode("92");
         phone.setBaseNumber("7876555");
 
@@ -27,7 +30,7 @@ public class RegistrationController {
 
         dto.setCommunicationDTO(communicationDTO);
 
-        dto.setName("Alex");
+        dto.setName("Alex");*/
 
 
         return "user-registration-page";
@@ -36,6 +39,12 @@ public class RegistrationController {
 
     @RequestMapping("/registration-success")
     public String processUserReg(@ModelAttribute("userRegistrationDto")UserRegistrationDTO dto) {
+
+        System.out.println("================>Inside processUserReg method from " + getClass());
+
+        System.out.println(dto);
+
+
         return "reg-success";
     }
 }

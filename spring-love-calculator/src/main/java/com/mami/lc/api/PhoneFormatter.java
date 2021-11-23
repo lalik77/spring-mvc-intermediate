@@ -20,6 +20,7 @@ public class PhoneFormatter implements Formatter<Phone> {
     @Override
     public Phone parse(String completeNumber, Locale locale) throws ParseException {
 
+
         System.out.println("========> Inside parse method from class :" + getClass());
 
         Phone phone = new Phone();
@@ -40,7 +41,7 @@ public class PhoneFormatter implements Formatter<Phone> {
                 phone.setBaseNumber(str[0]);
             }
 
-            
+
         } else  {
 
             phone.setCountryCode(str[0]);

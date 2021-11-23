@@ -1,5 +1,6 @@
 package com.mami.lc.api;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class UserRegistrationDTO {
@@ -70,5 +71,18 @@ public class UserRegistrationDTO {
 
     public void setPassword(char[] password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "UserRegistrationDTO{" +
+                "name='" + name + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password=" + Arrays.toString(password) +
+                ", countryName='" + countryName + '\'' +
+                ", hobbies=" + Arrays.toString(hobbies) +
+                ", gender='" + gender + '\'' +
+                ", communicationDTO=" + communicationDTO +
+                '}';
     }
 }
