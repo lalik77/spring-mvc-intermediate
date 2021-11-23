@@ -8,8 +8,13 @@ import java.util.Locale;
 public class PhoneFormatter implements Formatter<Phone> {
 
     @Override
-    public String print(Phone object, Locale locale) {
-        return null;
+    public String print(Phone phone, Locale locale) {
+
+        System.out.println("==============>Inside print method from : " + getClass());
+
+        return phone.getCountryCode() + "-" + phone.getBaseNumber();
+
+
     }
 
     @Override
