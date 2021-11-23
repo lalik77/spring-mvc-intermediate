@@ -22,12 +22,27 @@ public class PhoneFormatter implements Formatter<Phone> {
 
         System.out.println("========> Inside parse method from class :" + getClass());
 
-        String [] str = completeNumber.split("-");
-
         Phone phone = new Phone();
 
-        phone.setCountryCode(str[0]);
-        phone.setBaseNumber(str[1]);
+        String [] str = completeNumber.split("-");
+
+        int index = completeNumber.indexOf("-");
+
+        if( index == -1 ) {
+
+            //the '-' is not provide by client
+
+            phone.setCountryCode("+7");
+
+            phone.setBaseNumber(str[0]);
+
+
+        } else  {
+
+            phone.setCountryCode(str[0]);
+            phone.setBaseNumber(str[1]);
+
+        }
 
         //System.out.println(phone.getCountryCode() + "--" + phone.getBaseNumber());
 
