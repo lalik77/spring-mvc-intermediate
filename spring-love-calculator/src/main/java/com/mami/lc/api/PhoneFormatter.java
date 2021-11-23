@@ -28,15 +28,19 @@ public class PhoneFormatter implements Formatter<Phone> {
 
         int index = completeNumber.indexOf("-");
 
-        if( index == -1 ) {
+        if( index == -1 || completeNumber.startsWith("-")) {
 
             //the '-' is not provide by client
 
             phone.setCountryCode("+7");
 
-            phone.setBaseNumber(str[0]);
+            if(completeNumber.startsWith("-")) {
+                phone.setBaseNumber(str[1]);
+            }else {
+                phone.setBaseNumber(str[0]);
+            }
 
-
+            
         } else  {
 
             phone.setCountryCode(str[0]);
