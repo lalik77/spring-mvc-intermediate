@@ -1,5 +1,7 @@
 package com.mami.lc.api;
 
+import com.mami.lc.validator.Age;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,6 +9,10 @@ public class UserRegistrationDTO {
 
     private String name;
     private String userName;
+
+    @Age(message = "Invalid age , must be between 30 and 40 ",lower = 30, upper = 40)
+    private Integer age;
+
     private char[] password ;
     private String countryName;
     private String[] hobbies;
@@ -78,11 +84,20 @@ public class UserRegistrationDTO {
         return "UserRegistrationDTO{" +
                 "name='" + name + '\'' +
                 ", userName='" + userName + '\'' +
+                ", age='" + age + '\'' +
                 ", password=" + Arrays.toString(password) +
                 ", countryName='" + countryName + '\'' +
                 ", hobbies=" + Arrays.toString(hobbies) +
                 ", gender='" + gender + '\'' +
                 ", communicationDTO=" + communicationDTO +
                 '}';
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }

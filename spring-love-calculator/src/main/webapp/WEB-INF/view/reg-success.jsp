@@ -20,6 +20,7 @@
 
 <li>Name:&nbsp; ${userRegistrationDto.name}</li>
 <li>User Name:&nbsp;${userRegistrationDto.userName}</li>
+<li>Age:&nbsp;${userRegistrationDto.age}</li>
 <li>Password Name:&nbsp;${userRegistrationDto.password}</li>
 <li>Country:&nbsp; &nbsp;${userRegistrationDto.countryName}</li>
 <li>Hobbies:&nbsp;</li>

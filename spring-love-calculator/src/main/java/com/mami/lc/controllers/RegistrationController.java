@@ -4,8 +4,11 @@ import com.mami.lc.api.CommunicationDTO;
 import com.mami.lc.api.Phone;
 import com.mami.lc.api.UserRegistrationDTO;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 @Controller
 public class RegistrationController {
@@ -38,9 +41,20 @@ public class RegistrationController {
 
 
     @RequestMapping("/registration-success")
-    public String processUserReg(@ModelAttribute("userRegistrationDto")UserRegistrationDTO dto) {
+    public String processUserReg(@Valid @ModelAttribute("userRegistrationDto")UserRegistrationDTO dto,
+                                 BindingResult result) {
 
         System.out.println("================>Inside processUserReg method from " + getClass());
+
+        if(result.hasErrors()) {
+
+            System.out.println("====================> Errors with validation inside processUserReg method in "
+                    + getClass());
+
+            
+
+            return "user-registration-page";
+        }
 
         System.out.println(dto);
 

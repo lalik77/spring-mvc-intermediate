@@ -4,7 +4,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Registration Page</title>
+
+    <style type="text/css">
+        .error {
+            color: red;
+            text-align: left;
+            position: fixed;
+            margin-left: 30px;
+
+        }
+    </style>
 </head>
 <body>
 
@@ -21,6 +31,10 @@
 <br/>
     <label>User Name :</label>
     <form:input path="userName"/>
+    <br/>
+    <label>Age :</label>
+    <form:input path="age"/>
+    <form:errors path="age" cssClass="error"/>
 <br/>
     <label>Password :</label>
     <form:password  path="password"/>
