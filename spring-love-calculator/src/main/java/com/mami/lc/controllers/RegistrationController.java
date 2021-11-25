@@ -5,10 +5,13 @@ import com.mami.lc.api.Phone;
 import com.mami.lc.api.UserRegistrationDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class RegistrationController {
@@ -51,7 +54,11 @@ public class RegistrationController {
             System.out.println("====================> Errors with validation inside processUserReg method in "
                     + getClass());
 
-            
+            List<ObjectError> allErrors = result.getAllErrors();
+
+            List<ObjectError> objectErrorList = allErrors.stream().collect(Collectors.toList());
+
+            System.out.println(objectErrorList);
 
             return "user-registration-page";
         }

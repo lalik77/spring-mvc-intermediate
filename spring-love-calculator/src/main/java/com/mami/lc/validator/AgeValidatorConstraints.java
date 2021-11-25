@@ -8,7 +8,6 @@ public class AgeValidatorConstraints implements ConstraintValidator<Age,Integer>
     private int lower;
     private int upper;
 
-
     @Override
     public void initialize(Age constraintAnnotation) {
 

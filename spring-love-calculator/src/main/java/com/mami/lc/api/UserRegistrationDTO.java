@@ -10,7 +10,7 @@ public class UserRegistrationDTO {
     private String name;
     private String userName;
 
-    @Age(message = "Invalid age , must be between 30 and 40 ",lower = 30, upper = 40)
+    @Age
     private Integer age;
 
     private char[] password ;
