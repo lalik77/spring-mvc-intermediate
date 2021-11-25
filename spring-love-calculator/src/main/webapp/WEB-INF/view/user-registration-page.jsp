@@ -70,7 +70,10 @@
 
     email <form:input path="communicationDTO.email"/>
     <br/>
+    <br/>
     phone <form:input path="communicationDTO.phone"/>
+          <form:errors path="communicationDTO" cssClass="error"/>
+
 
     <br/>
     <input type="submit" value="Register">
@@ -78,6 +81,9 @@
 </form:form>
 
     </div>
+
+
+<
 
 
 

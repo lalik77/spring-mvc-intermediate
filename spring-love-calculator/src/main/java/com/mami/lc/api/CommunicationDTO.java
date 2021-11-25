@@ -1,8 +1,11 @@
 package com.mami.lc.api;
 
+import com.mami.lc.validator.VPhone;
+
 public class CommunicationDTO {
 
     private String email="test";
+
     private Phone phone;
 
 

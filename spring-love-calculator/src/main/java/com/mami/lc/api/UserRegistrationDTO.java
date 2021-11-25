@@ -1,6 +1,7 @@
 package com.mami.lc.api;
 
 import com.mami.lc.validator.Age;
+import com.mami.lc.validator.VPhone;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +18,8 @@ public class UserRegistrationDTO {
     private String countryName;
     private String[] hobbies;
     private String gender;
+
+    @VPhone
     private CommunicationDTO communicationDTO;
 
 

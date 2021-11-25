@@ -33,7 +33,7 @@ public class PhoneFormatter implements Formatter<Phone> {
 
             //the '-' is not provide by client
 
-            phone.setCountryCode("+7");
+            phone.setCountryCode("7");
 
             if(completeNumber.startsWith("-")) {
                 phone.setBaseNumber(str[1]);
