@@ -2,15 +2,17 @@ package com.mami.lc.api;
 
 import com.mami.lc.validator.Age;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Arrays;
 import java.util.List;
 
 public class UserRegistrationDTO {
 
+    @NotEmpty(message = "* Cannot be empty")
     private String name;
     private String userName;
 
-    @Age
+    //@Age
     private Integer age;
 
     private char[] password ;
