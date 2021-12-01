@@ -3,6 +3,7 @@ package com.mami.lc.controllers;
 import com.mami.lc.api.CommunicationDTO;
 import com.mami.lc.api.Phone;
 import com.mami.lc.api.UserRegistrationDTO;
+import com.mami.lc.propertyeditor.NamePropertyEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -84,6 +85,10 @@ public class RegistrationController {
         StringTrimmerEditor editor = new StringTrimmerEditor(false) ;
         binder.registerCustomEditor(String.class,"name",editor);
         //binder.setDisallowedFields("name");
+
+        NamePropertyEditor nameEditor = new NamePropertyEditor();
+
+        binder.registerCustomEditor(String.class,"name",nameEditor);
 
         }
 }
