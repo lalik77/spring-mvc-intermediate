@@ -1,10 +1,13 @@
 package com.seleniumexpress.lc.controllers;
 
+import com.seleniumexpress.lc.formatter.CreditCardFormatter;
+import com.seleniumexpress.lc.propertyeditor.MyCustomCurrencyEditor;
 import com.seleniumexpress.test.api.BillDTO;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.Currency;
 import java.util.Date;
 import javax.validation.Valid;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -50,6 +53,16 @@ public class TestController {
 		CustomNumberEditor customNumberEditor = new CustomNumberEditor(BigDecimal.class, numberFormat,
 				true);
 		binder.registerCustomEditor(BigDecimal.class,"amount",customNumberEditor);
+
+		//register custom editor for currency
+
+		MyCustomCurrencyEditor currencyEditor = new MyCustomCurrencyEditor();
+
+		binder.registerCustomEditor(Currency.class,"currency" ,currencyEditor);
+
+		//register custom formatter
+
+		binder.addCustomFormatter(new CreditCardFormatter());
 
 
 	}

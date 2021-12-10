@@ -9,9 +9,9 @@ public class CurrencyDemo {
 		
 	//JPY,AUD,INR,USD
 	
-	Currency currency = Currency.getInstance("GBP");
+	Currency currency = Currency.getInstance("USD");
 	System.out.println(currency.getDisplayName());
-	//System.out.println(currency.getCurrencyCode());	
+	System.out.println(currency.getCurrencyCode());
 		
 	}
 

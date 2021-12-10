@@ -27,11 +27,11 @@ public class TestConfig implements WebMvcConfigurer {
 		return viewResolver;
 	}
 	
-	@Override
+/*	@Override
 	public void addFormatters(FormatterRegistry registry) {
 		System.out.println("inside add formater method..");
 		registry.addFormatter(new CreditCardFormatter());
-	}
+	}*/
 
 
 }
