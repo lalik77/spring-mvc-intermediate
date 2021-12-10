@@ -14,7 +14,7 @@ import com.seleniumexpress.lc.formatter.CreditCardFormatter;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = {"com.seleniumexpress"})
-@PropertySource("classpath:messages.properties")
+//@PropertySource("classpath:messages.properties")
 public class TestConfig implements WebMvcConfigurer {
 
 	@Bean
