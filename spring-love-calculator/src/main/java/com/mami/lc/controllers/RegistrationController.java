@@ -4,6 +4,7 @@ import com.mami.lc.api.CommunicationDTO;
 import com.mami.lc.api.Phone;
 import com.mami.lc.api.UserRegistrationDTO;
 import com.mami.lc.propertyeditor.NamePropertyEditor;
+import com.mami.lc.validator.UserNameValidator;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -89,6 +90,8 @@ public class RegistrationController {
         NamePropertyEditor nameEditor = new NamePropertyEditor();
 
         binder.registerCustomEditor(String.class,"name",nameEditor);
+
+        binder.addValidators(new UserNameValidator());
 
         }
 }

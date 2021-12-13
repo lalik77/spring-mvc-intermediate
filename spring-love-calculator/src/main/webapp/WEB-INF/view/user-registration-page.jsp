@@ -32,6 +32,7 @@
 <br/>
     <label>User Name :</label>
     <form:input path="userName"/>
+    <form:errors path="userName" cssClass="error"/>
     <br/>
     <label>Age :</label>
     <form:input path="age"/>
