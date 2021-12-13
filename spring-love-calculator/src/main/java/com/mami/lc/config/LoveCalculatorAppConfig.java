@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "com.mami.lc.controllers", "com.mami.lc.validator")
+@ComponentScan(basePackages = {"com.mami.lc.controllers", "com.mami.lc.validator"})
 public class LoveCalculatorAppConfig implements WebMvcConfigurer {
 
     @Bean
