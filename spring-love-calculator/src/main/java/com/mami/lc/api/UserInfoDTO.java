@@ -8,7 +8,7 @@ import java.util.Objects;
 public class UserInfoDTO {
 
     @NotBlank(message = " * User name can't be blank")
-    @Size(min = 2, message = " * Enter at least 2 symbols")
+    @Size(min = 2, max = 15, message = "{userName.size}")
     private String userName;
     private String crushName;
 
