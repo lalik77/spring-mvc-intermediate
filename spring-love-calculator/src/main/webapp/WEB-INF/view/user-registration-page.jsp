@@ -71,6 +71,7 @@
     <h1>Communication</h1>
 
     email <form:input path="communicationDTO.email"/>
+          <form:errors path="communicationDTO.email" cssClass="error"/>
     <br/>
     phone <form:input path="communicationDTO.phone"/>
 
