@@ -1,8 +1,10 @@
 package com.seleniumexpress.lc.controllers;
 
 import com.seleniumexpress.lc.formatter.CreditCardFormatter;
+import com.seleniumexpress.lc.propertyeditor.CreditCardEditor;
 import com.seleniumexpress.lc.propertyeditor.MyCustomCurrencyEditor;
 import com.seleniumexpress.test.api.BillDTO;
+import com.seleniumexpress.test.api.CreditCard;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -24,6 +26,14 @@ public class TestController {
 
 	@RequestMapping("/")
 	public String showHomepage(@ModelAttribute("billDTO") BillDTO billDTO) {
+
+		CreditCard creditCard = new CreditCard();
+		creditCard.setFirstFourDigits(1234);
+		creditCard.setSecondFourDigits(1234);
+		creditCard.setThirdFourDigits(1234);
+		creditCard.setLastFourDigits(1234);
+
+		billDTO.setCreditCard(creditCard);
 
 		
 		return "bill-page";
@@ -62,7 +72,10 @@ public class TestController {
 
 		//register custom formatter
 
-		binder.addCustomFormatter(new CreditCardFormatter());
+		//binder.addCustomFormatter(new CreditCardFormatter());
+
+		CreditCardEditor cardEditor = new CreditCardEditor();
+		binder.registerCustomEditor(CreditCard.class,"creditCard",cardEditor);
 
 
 	}
