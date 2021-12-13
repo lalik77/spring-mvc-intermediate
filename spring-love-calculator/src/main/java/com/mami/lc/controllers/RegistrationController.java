@@ -6,6 +6,7 @@ import com.mami.lc.api.UserRegistrationDTO;
 import com.mami.lc.propertyeditor.NamePropertyEditor;
 import com.mami.lc.validator.EmailValidator;
 import com.mami.lc.validator.UserNameValidator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -22,6 +23,11 @@ import java.util.stream.Collectors;
 
 @Controller
 public class RegistrationController {
+
+
+    @Autowired
+    private EmailValidator emailValidator;
+
 
 
     @RequestMapping("/register")
@@ -57,6 +63,8 @@ public class RegistrationController {
         System.out.println("==========================> Name is " + "|" + dto.getName() + "|");
 
         System.out.println("================>Inside processUserReg method from " + getClass());
+
+        emailValidator.validate(dto,result);
 
         if(result.hasErrors()) {
 
@@ -94,7 +102,7 @@ public class RegistrationController {
 
         binder.addValidators(new UserNameValidator());
 
-        binder.addValidators(new EmailValidator());
+        //binder.addValidators(new EmailValidator());
 
         }
 }
