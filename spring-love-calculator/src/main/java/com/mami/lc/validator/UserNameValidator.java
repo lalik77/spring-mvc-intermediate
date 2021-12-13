@@ -24,5 +24,14 @@ public class UserNameValidator implements Validator {
         .rejectIfEmptyOrWhitespace(errors, "userName", "userName.empty",
             "Cannot be empty oe with white space");
 
+    UserRegistrationDTO u = (UserRegistrationDTO) target;
+
+    if ( !u.getUserName().contains("_") ) {
+
+      errors.rejectValue("userName","userName.invalidString","should contain '_'");
+    }
+
   }
+
+
 }
