@@ -10,16 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class EmailController {
 
-  @RequestMapping("/email/{userName}")
-  public String sendEmail(@PathVariable("userName") String userName, Model model){
-
-    model.addAttribute("emailDTO", new EmailDTO());
-    //model.addAttribute("userName", userName.toUpperCase());
-
+  @RequestMapping("/email")
+  public String sendEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO){
     return "email-page";
   }
-
-
 
   @RequestMapping("/process-email")
   public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO){

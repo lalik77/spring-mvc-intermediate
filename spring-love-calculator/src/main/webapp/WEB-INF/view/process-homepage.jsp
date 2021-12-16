@@ -23,7 +23,7 @@
     <br/>
     <br/>
 
-    <a href="${pageContext.request.contextPath}/email/${userInfo.userName}" >Send Result to Your Email </a>
+    <a href="${pageContext.request.contextPath}/email" >Send Result to Your Email </a>
 
 
 </div>
