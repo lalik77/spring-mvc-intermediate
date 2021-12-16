@@ -23,12 +23,8 @@
     <br/>
     <br/>
 
-    <a href="#" >Send Result to Your Email </a>
-   <%-- ${result}--%>
+    <a href="${pageContext.request.contextPath}/email/${userInfo.userName}" >Send Result to Your Email </a>
 
-    <%--<p> Username ${userInfo.userName}</p>
-
-    <p> Crushname ${userInfo.crushName}</p>--%>
 
 </div>
 </body>
