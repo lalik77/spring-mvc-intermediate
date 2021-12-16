@@ -11,8 +11,24 @@
     <h1> Love Calculator </h1>
     <br>
     <hr>
-<p> Username ${userInfo.userName}</p>
-<p> Crushname ${userInfo.crushName}</p>
+    <h2>The love calculator predicts</h2>
+
+    <br/>
+
+    ${userInfo.userName} and ${userInfo.crushName} are
+
+    FRIENDS
+
+    <br/>
+    <br/>
+    <br/>
+
+    <a href="#" >Send Result to Your Email </a>
+   <%-- ${result}--%>
+
+    <%--<p> Username ${userInfo.userName}</p>
+
+    <p> Crushname ${userInfo.crushName}</p>--%>
 
 </div>
 </body>

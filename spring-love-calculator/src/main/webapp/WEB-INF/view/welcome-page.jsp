@@ -44,7 +44,7 @@
     <br>
     <hr>
 
-    <form:form  action="process-homepage" method="get" modelAttribute="userInfo" onsubmit="return validateUserName()">
+    <form:form  action="process-homepage" method="get" modelAttribute="userInfo" onsubmit="return true">
         <p>
             <label for="yn">Your Name </label>
             <form:input id="yn" path="userName"/>
