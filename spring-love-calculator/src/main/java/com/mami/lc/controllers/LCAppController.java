@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("userInfo")
 public class LCAppController {
 
     @RequestMapping("/")
-    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfoDTO) {
+    public String showHomePage( Model model) {
+
+        model.addAttribute("userInfo",new UserInfoDTO());
 
         return "welcome-page";
     }

@@ -15,7 +15,7 @@
     <br>
     <hr>
 
-    <h2>Hi </h2>
+    <h2>Hi ${userInfo.userName} </h2>
     <label>Email succesfully sent to ${emailDTO}</label>
 
 

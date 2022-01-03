@@ -17,7 +17,7 @@
     <br>
     <hr>
 
-    <h1>Hi ${userName}</h1>
+    <h1>Hi ${userInfo.userName}</h1>
     <h2>Send Result To Your Email</h2>
 
     <form:form action="process-email" method="get" modelAttribute="emailDTO">
