@@ -6,4 +6,8 @@
 <p>Last Name ${lastName}</p>
 
 
+<p> FIRST NAME VALUE FETCHING FROM THE REQUEST : ${requestScope.firstName}</p>
+<p> FIRST NAME VALUE FETCHING FROM THE SESSION : ${sessionScope.firstName}</p>
+
+
 <a href="/seconds">Next</a>
