@@ -44,6 +44,7 @@
     <br>
     <hr>
 
+    <%--@elvariable id="userInfo" type="com.mami.lc.api"--%>
     <form:form  action="process-homepage" method="get" modelAttribute="userInfo" onsubmit="return true">
         <p>
             <label for="yn">Your Name </label>

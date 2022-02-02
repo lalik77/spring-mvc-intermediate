@@ -1,6 +1,7 @@
 package com.mami.lc.controllers;
 
 import com.mami.lc.api.UserInfoDTO;
+import com.sun.org.apache.bcel.internal.generic.MONITORENTER;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,12 +12,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes({"userInfo"})
 public class LCAppController {
 
     @RequestMapping("/")
-    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfoDTO) {
+    public String showHomePage(UserInfoDTO userInfoDTO, Model model) {
+
+        model.addAttribute("userInfo",userInfoDTO);
 
         return "welcome-page";
     }

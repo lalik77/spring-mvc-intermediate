@@ -4,7 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Sendinf Mail</title>
+    <title>Sending Mail</title>
 
 </head>
 <body>
@@ -20,6 +20,7 @@
     <h1>Hi ${userName}</h1>
     <h2>Send Result To Your Email</h2>
 
+    <%--@elvariable id="emailDTO" type="com.mami.lc.api.EmailDTO"--%>
     <form:form action="process-email" method="get" modelAttribute="emailDTO">
 
         <label>Enter Your Email</label>
