@@ -1,56 +1,55 @@
 package com.mami.lc.controllers;
 
 import com.mami.lc.api.UserInfoDTO;
-import com.sun.org.apache.bcel.internal.generic.MONITORENTER;
+import com.mami.lc.service.LCAppService;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.validation.Valid;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes({"userInfo"})
 public class LCAppController {
 
+    private LCAppService lcAppService;
+
+    public LCAppController(LCAppService lcAppService) {
+        this.lcAppService = lcAppService;
+    }
+
     @RequestMapping("/")
     public String showHomePage(UserInfoDTO userInfoDTO, Model model) {
 
-        model.addAttribute("userInfo",userInfoDTO);
+        model.addAttribute("userInfo", userInfoDTO);
 
         return "welcome-page";
     }
 
 
     @RequestMapping("/process-homepage")
-    public String process(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result) {
+    public String process(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO,
+        BindingResult result, Model model) {
 
-        System.out.println(userInfoDTO.isTermOfConditions());
+        // System.out.println(userInfoDTO.isTermOfConditions());
 
         if (result.hasErrors()) {
-
             System.out.println("Errors in method process from: " + this.getClass());
-
             return "welcome-page";
-
-
         }
 
-        System.out.println("Username :" + userInfoDTO.getUserName());
-        System.out.println("Crushname : " + userInfoDTO.getCrushName());
+        //System.out.println("Username :" + userInfoDTO.getUserName());
+        // System.out.println("Crushname : " + userInfoDTO.getCrushName());
 
+        //TODO : Write a service which will calculate the love % between the user and the crushname
 
-        //Write a service which will calculate the love % between the user and the crushname
+        String calculationResult = lcAppService
+            .calculateLove(userInfoDTO.getUserName(), userInfoDTO.getCrushName());
+        userInfoDTO.setResult(calculationResult);
+        model.addAttribute("result", calculationResult);
 
         return "process-homepage";
     }
-
-
-
 }

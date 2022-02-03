@@ -15,16 +15,17 @@
 
     <br/>
 
-    ${userInfo.userName} and ${userInfo.crushName} are
+     <h2>  ${userInfo.userName} and ${userInfo.crushName} are ${result}  </h2>
 
-    FRIENDS
+    <div>
+        <a href="${pageContext.request.contextPath}/email" >Send Result to Your Email </a>
+    </div>
 
-    <br/>
-    <br/>
-    <br/>
+    <br>
 
-    <a href="${pageContext.request.contextPath}/email" >Send Result to Your Email </a>
-
+    <div>
+        <a href="${pageContext.request.contextPath}/">Recalculate</a>
+    </div>
 
 </div>
 </body>

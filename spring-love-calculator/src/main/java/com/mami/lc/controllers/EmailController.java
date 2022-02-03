@@ -30,8 +30,9 @@ public class EmailController {
     System.out
         .println("Inside method process-email \n " + "User Name  " + userInfoDTO.getUserName());
     System.out.println(" Email " + emailDTO.getUserEmail());
+    System.out.println(" Result " + userInfoDTO.getResult() );
 
-     lcAppEmailService.send(userInfoDTO.getUserName(),emailDTO.getUserEmail(),"Friend");
+     lcAppEmailService.send(userInfoDTO.getUserName(),emailDTO.getUserEmail(),userInfoDTO.getResult());
 
     return "process-email-page";
   }

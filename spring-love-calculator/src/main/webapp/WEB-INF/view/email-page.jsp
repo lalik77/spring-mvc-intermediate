@@ -17,7 +17,7 @@
     <br>
     <hr>
 
-    <h1>Hi ${userName}</h1>
+    <h1>Hi ${userInfo.userName}</h1>
     <h2>Send Result To Your Email</h2>
 
     <%--@elvariable id="emailDTO" type="com.mami.lc.api.EmailDTO"--%>
@@ -29,7 +29,13 @@
 
     </form:form>
 
+    <div>
+        <a href="${pageContext.request.contextPath}/">Ignore and return to calculate page </a>
+    </div>
+
 </div>
+
+
 
 
 </body>

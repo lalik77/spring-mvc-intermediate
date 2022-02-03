@@ -2,11 +2,14 @@ package com.mami.lc.config;
 
 import com.mami.lc.api.PhoneFormatter;
 import java.util.Properties;
+import java.util.logging.Logger;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.env.Environment;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -19,12 +22,21 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = "com.mami.lc")
+@PropertySource("classpath:email.properties")
 public class LoveCalculatorAppConfig implements WebMvcConfigurer {
 
-    @Bean
-    public InternalResourceViewResolver viewResolver(){
+    private Logger logger = Logger.getLogger(LoveCalculatorAppConfig.class.getName());
 
-        InternalResourceViewResolver viewResolver=new InternalResourceViewResolver();
+    private Environment environment;
+
+    public LoveCalculatorAppConfig(Environment environment) {
+        this.environment = environment;
+    }
+
+    @Bean
+    public InternalResourceViewResolver viewResolver() {
+
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 
         viewResolver.setPrefix("/WEB-INF/view/");
         viewResolver.setSuffix(".jsp");
@@ -55,18 +67,19 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
     public JavaMailSender javaMailSender() {
 
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
-        javaMailSender.setHost("smtp.gmail.com");
-        javaMailSender.setUsername("your_mail@gmail.com");
-        javaMailSender.setPassword("your_password");
-        javaMailSender.setPort(587);
+
+        javaMailSender.setHost(environment.getProperty("mail.host"));
+        javaMailSender.setUsername(environment.getProperty("mail.username"));
+        javaMailSender.setPassword(environment.getProperty("mail.password"));
+        javaMailSender.setPort(getIntProperty("mail.port"));
 
         Properties mailProps = new Properties();
-        mailProps.put("mail.smtp.starttls.enable",true);
-        mailProps.put("mail.smtp.ssl.trust","smtp.gmail.com");
+        mailProps.put("mail.smtp.starttls.enable", true);
+        mailProps.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
         javaMailSender.setJavaMailProperties(mailProps);
 
-       return javaMailSender;
+        return javaMailSender;
     }
 
     @Override
@@ -79,4 +92,9 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(new PhoneFormatter());
     }
+
+    private int getIntProperty(String key) {
+
+        int property = Integer.parseInt(environment.getProperty(key));
+        return property;    }
 }

@@ -4,4 +4,5 @@ public interface LCAppEmailService {
 
   void send(String userName,String to, String result);
 
+
 }

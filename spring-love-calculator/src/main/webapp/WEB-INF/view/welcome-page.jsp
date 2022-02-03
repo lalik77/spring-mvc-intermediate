@@ -45,7 +45,7 @@
     <hr>
 
     <%--@elvariable id="userInfo" type="com.mami.lc.api"--%>
-    <form:form  action="process-homepage" method="get" modelAttribute="userInfo" onsubmit="return true">
+    <form:form  action="process-homepage" method="get" modelAttribute="userInfo" onsubmit="return validateUserName()">
         <p>
             <label for="yn">Your Name </label>
             <form:input id="yn" path="userName"/>
@@ -55,6 +55,7 @@
         <p>
             <label for="cn">Crush Name</label>
             <form:input id="cn" path="crushName"/>
+            <for:errors path="crushName" cssClass="error"/>
         </p>
 
         <p>

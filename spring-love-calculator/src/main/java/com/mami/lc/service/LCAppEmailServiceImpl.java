@@ -22,7 +22,7 @@ public class LCAppEmailServiceImpl implements LCAppEmailService {
     simpleMailMessage.setTo(to);
     simpleMailMessage.setSubject("Love Boring Calculator Application Result");
     simpleMailMessage
-        .setText("Hi" + userName + " \nThe result predicated by the boring app is " + "Friend");
+        .setText("Hi" + userName + " \nThe result predicated by the boring app : " + result);
 
     javaMailSender.send(simpleMailMessage);
 

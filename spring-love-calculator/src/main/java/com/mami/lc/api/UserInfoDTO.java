@@ -10,22 +10,27 @@ public class UserInfoDTO {
     @NotBlank(message = " * User name can't be blank")
     @Size(min = 2, message = " * Enter at least 2 symbols")
     private String userName;
+
+    @NotBlank(message = " * User name can't be blank")
+    @Size(min = 2, message = " * Enter at least 2 symbols")
     private String crushName;
 
     @AssertTrue(message = "You have to agree our conditions")
     private boolean termOfConditions;
 
-    public boolean isTermOfConditions() {
-        return termOfConditions;
-    }
-
-    public void setTermOfConditions(boolean termOfConditions) {
-        this.termOfConditions = termOfConditions;
-    }
+    private String result;
 
     public UserInfoDTO() {
         System.out.println("Constructor Called");
 
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
     }
 
     public String getUserName() {
@@ -42,6 +47,14 @@ public class UserInfoDTO {
 
     public void setCrushName(String crushName) {
         this.crushName = crushName;
+    }
+
+    public boolean isTermOfConditions() {
+        return termOfConditions;
+    }
+
+    public void setTermOfConditions(boolean termOfConditions) {
+        this.termOfConditions = termOfConditions;
     }
 
     @Override

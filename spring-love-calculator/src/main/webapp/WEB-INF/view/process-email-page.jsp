@@ -6,8 +6,6 @@
 </head>
 <body>
 
-
-
 <div align="center">
     <br>
     <br>
@@ -15,8 +13,17 @@
     <br>
     <hr>
 
-    <h2>Hi </h2>
-    <label>Email succesfully sent to ${emailDTO}</label>
+    <div>
+        <h2>Hi ${userInfo.userName} </h2>
+        <label>Email successfully sent to ${emailDTO}</label>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <a href="${pageContext.request.contextPath}/">Back to calculation page. </a>
+    </div>
 
 
 </div>
