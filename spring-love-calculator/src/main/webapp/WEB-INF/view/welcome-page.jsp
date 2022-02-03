@@ -6,15 +6,20 @@
 <head>
     <title>Mvc app</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+
     <script type="text/javascript">
 
-        function validateUserName(){
+      function validateUserName() {
 
-            var userName = document.getElementById("yn").value;
+        var userName = document.getElementById("yn").value;
 
-            if (userName.length < 2) {
+        if (userName.length < 2) {
 
-                alert("your name should have at least one char")
+          alert("your name should have at least one char")
                 return false;
 
             }
@@ -59,14 +64,25 @@
         </p>
 
         <p>
-          <form:checkbox path="termOfConditions" ></form:checkbox>
+            <form:checkbox path="termOfConditions"></form:checkbox>
             <label>I am agreeing that this is for fun</label>
             <form:errors path="termOfConditions" cssClass="error"/>
         </p>
 
-        <input  type="submit" value="calculate" >
+        <input type="submit" value="calculate">
     </form:form>
 
 </div>
+
+<div>
+
+
+</div>
+
+<nav class="navbar fixed-bottom navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/feedback">Feedback</a>
+    </div>
+</nav>
 </body>
 </html>
