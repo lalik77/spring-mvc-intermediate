@@ -28,10 +28,12 @@ public class LCAppController {
         return "welcome-page";
     }
 
-
     @RequestMapping("/process-homepage")
-    public String process(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO,
-        BindingResult result, Model model) {
+    public String process(Model model,@Valid UserInfoDTO userInfoDTO,
+        BindingResult result) {
+
+        model.addAttribute("userInfo",userInfoDTO);
+        model.addAttribute(BindingResult.MODEL_KEY_PREFIX+"userInfo",result);
 
         // System.out.println(userInfoDTO.isTermOfConditions());
 
@@ -44,7 +46,6 @@ public class LCAppController {
         // System.out.println("Crushname : " + userInfoDTO.getCrushName());
 
         //TODO : Write a service which will calculate the love % between the user and the crushname
-
         String calculationResult = lcAppService
             .calculateLove(userInfoDTO.getUserName(), userInfoDTO.getCrushName());
         userInfoDTO.setResult(calculationResult);
