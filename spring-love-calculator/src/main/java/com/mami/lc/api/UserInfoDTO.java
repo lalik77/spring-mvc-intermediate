@@ -21,7 +21,9 @@ public class UserInfoDTO {
     private String result;
 
     public UserInfoDTO() {
-        System.out.println("Constructor Called");
+       /* System.out.println("UserInfoDTO Constructor Called");
+        System.out.println("userName : " + userName);
+        System.out.println("crushName : " + crushName);*/
 
     }
 

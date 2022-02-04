@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Mvc app</title>
@@ -18,7 +19,8 @@
      <h2>  ${userInfo.userName} and ${userInfo.crushName} are ${result}  </h2>
 
     <div>
-        <a href="${pageContext.request.contextPath}/email" >Send Result to Your Email </a>
+        <%--<a href="${pageContext.request.contextPath}/email" >Send Result to Your Email </a>--%>
+        <a href="<c:url value="/email"/>"  >Send Result to Your Email </a>
     </div>
 
     <br>
